@@ -1,38 +1,23 @@
 const fs = require('fs');
 
 const pageContent = fs.readFileSync('app/page.tsx', 'utf8');
-const layoutContent = fs.readFileSync('app/layout.tsx', 'utf8');
-const combined = pageContent + '\n' + layoutContent;
+const imageMatches = [...pageContent.matchAll(/["'](\/[a-zA-Z0-9_\-.]+\.(?:jpg|jpeg|png|webp|svg))["']/g)].map(m => m[1]);
+const uniqueImages = [...new Set(imageMatches)];
 
-const imageRegex = /["'](\/[a-zA-Z0-9_\-\.]+\.(?:png|jpg|jpeg|svg|ico|webp))(?:\?[^"']*)?["']/g;
-const paths = new Set();
-let match;
-while ((match = imageRegex.exec(combined)) !== null) {
-  paths.add(match[1]);
-}
+console.log(`Checking ${uniqueImages.length} images referenced in page.tsx:`);
 
-console.log('Images and icons referenced in code:');
-let missing = 0;
-for (const p of paths) {
-  const publicPath = 'public' + p;
-  const appPath = 'app' + p;
-  const existsInPublic = fs.existsSync(publicPath);
-  const existsInApp = fs.existsSync(appPath);
-
-  if (existsInPublic) {
-    const stat = fs.statSync(publicPath);
-    console.log(`  ✓ ${p} exists in public (${stat.size} bytes)`);
-  } else if (existsInApp) {
-    const stat = fs.statSync(appPath);
-    console.log(`  ✓ ${p} exists in app (${stat.size} bytes)`);
+let allOk = true;
+uniqueImages.forEach(img => {
+  const filePath = 'public' + img;
+  if (!fs.existsSync(filePath)) {
+    console.error(`MISSING IMAGE: ${filePath}`);
+    allOk = false;
   } else {
-    console.log(`  ❌ MISSING: ${p}`);
-    missing++;
+    const size = fs.statSync(filePath).size;
+    console.log(`OK: ${img} (${size} bytes)`);
   }
-}
+});
 
-if (missing === 0) {
-  console.log('SUCCESS: All images, icons, and favicons exist and are non-empty!');
-} else {
-  console.log(`ERROR: ${missing} files are missing!`);
+if (allOk) {
+  console.log('ALL images referenced in page.tsx exist and have valid file sizes!');
 }

@@ -3,33 +3,34 @@
 :root {
   color-scheme: light;
   
-  /* SOL E PISCINA — Paleta Primária (Deep Navy Azul Marinho Real - Extraída do Logotipo) */
-  --brand-navy-darkest: #001038;
-  --brand-navy-deep: #001954;
-  --brand-navy-primary: #00206D;
-  --brand-navy-card: #00267F;
-  --brand-navy-border: #13398D;
+  /* AQUALIFE — Paleta Primária (Azul Royal Profundo / Cobalt — Letras "aqua" do Logotipo Oficial) */
+  --brand-navy-darkest: #031445;
+  --brand-navy-deep: #051C73;
+  --brand-navy-primary: #024395;
+  --brand-navy-card: #0A2B78;
+  --brand-navy-border: #1E4BA8;
   
-  /* SOL E PISCINA — Paleta Secundária (Sol Radiante & Energia Solar - Extraída do Logotipo) */
-  --brand-orange-primary: #FE7600;
-  --brand-orange-hover: #E06800;
-  --brand-orange-vibrant: #FF8A1E;
-  --brand-orange-light: #FFECD9;
-  --brand-orange-surface: #FFF7ED;
-  --brand-orange-border: #FED7AA;
-  
-  --brand-amber-gold: #FFAA29;
-  --brand-amber-surface: #FFFBEB;
-  
-  /* Tons Aquáticos Complementares (Ondas do Logo e Água Cristalina) */
-  --brand-blue-deep: #003399;
-  --brand-blue-primary: #0284C7;
-  --brand-blue-hover: #0369A1;
-  --brand-cyan-wave: #0EA5E9;
-  --brand-cyan-light: #38BDF8;
-  --brand-cyan-surface: #F0F7FF;
+  /* AQUALIFE — Paleta Secundária (Cyan / Azul Piscina Radiante — Letras "life" e Onda Superior do Logotipo) */
+  --brand-cyan-primary: #02B8FD;
+  --brand-cyan-hover: #029BD6;
+  --brand-cyan-light: #70D6FF;
+  --brand-cyan-surface: #F0F9FF;
   --brand-cyan-border: #BAE6FD;
+  
+  /* AQUALIFE — Paleta de Acento (Sol Dourado & Onda Amarela Inferior do Logotipo) */
+  --brand-gold-primary: #FCCF04;
+  --brand-gold-hover: #E5BC00;
+  --brand-gold-dark: #D97706;
+  --brand-gold-surface: #FEFCE8;
+  --brand-gold-border: #FDE68A;
 
+  /* Aliases para compatibilidade */
+  --brand-orange-primary: #FCCF04;
+  --brand-orange-hover: #E5BC00;
+  --brand-orange-surface: #FEFCE8;
+  --brand-orange-border: #FDE68A;
+  --brand-amber-gold: #FCCF04;
+  
   /* Neutros e Superfícies */
   --brand-slate-dark: #0A1128;
   --brand-slate-muted: #64748B;
@@ -47,19 +48,19 @@
   --font-heading: var(--font-heading), "Montserrat", system-ui, sans-serif;
   --font-sans: var(--font-body), "Plus Jakarta Sans", system-ui, sans-serif;
   
-  --color-brand-navy-primary: #00206D;
-  --color-brand-navy-deep: #001954;
-  --color-brand-navy-darkest: #001038;
-  --color-brand-navy-card: #00267F;
+  --color-brand-navy-primary: #024395;
+  --color-brand-navy-deep: #051C73;
+  --color-brand-navy-darkest: #031445;
+  --color-brand-navy-card: #0A2B78;
   
-  --color-brand-orange-primary: #FE7600;
-  --color-brand-orange-hover: #E06800;
-  --color-brand-orange-vibrant: #FF8A1E;
-  --color-brand-orange-surface: #FFF7ED;
+  --color-brand-cyan-primary: #02B8FD;
+  --color-brand-cyan-hover: #029BD6;
+  --color-brand-cyan-surface: #F0F9FF;
+  --color-brand-cyan-border: #BAE6FD;
   
-  --color-brand-blue-primary: #0284C7;
-  --color-brand-cyan-wave: #0EA5E9;
-  --color-brand-cyan-surface: #F0F7FF;
+  --color-brand-gold-primary: #FCCF04;
+  --color-brand-gold-hover: #E5BC00;
+  --color-brand-gold-surface: #FEFCE8;
   
   --color-brand-canvas-light: #F8FAFC;
   --color-brand-canvas-surface: #FFFFFF;
@@ -79,8 +80,8 @@ body {
 }
 
 ::selection {
-  background: #FE7600;
-  color: #FFFFFF;
+  background: #02B8FD;
+  color: #031445;
 }
 
 .font-heading {
@@ -91,68 +92,95 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 800;
   line-height: 1.4;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #00206D;
+  color: #024395;
 }
 
+.eyebrow-cyan {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #02B8FD;
+}
+
+.eyebrow-gold,
 .eyebrow-orange {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 800;
   line-height: 1.4;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #FE7600;
+  color: #D97706;
 }
 
 .eyebrow::before {
   width: 1.5rem;
-  height: 2px;
+  height: 2.5px;
   flex: none;
-  background: #FE7600;
+  background: #02B8FD;
   content: "";
   border-radius: 999px;
 }
 
+.eyebrow-cyan::before {
+  width: 1.5rem;
+  height: 2.5px;
+  flex: none;
+  background: #02B8FD;
+  content: "";
+  border-radius: 999px;
+}
+
+.eyebrow-gold::before,
 .eyebrow-orange::before {
   width: 1.5rem;
-  height: 2px;
+  height: 2.5px;
   flex: none;
-  background: #FE7600;
+  background: #FCCF04;
   content: "";
   border-radius: 999px;
 }
 
 /* Card Styles */
+.card-aqualife,
 .card-sol {
   background: #FFFFFF;
   border: 1px solid #E2E8F0;
-  box-shadow: 0 1px 3px 0 rgba(0, 32, 109, 0.04), 0 1px 2px -1px rgba(0, 32, 109, 0.04);
+  box-shadow: 0 1px 3px 0 rgba(2, 67, 149, 0.05), 0 1px 2px -1px rgba(2, 67, 149, 0.05);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.card-aqualife:hover,
 .card-sol:hover {
-  border-color: #FED7AA;
-  box-shadow: 0 12px 30px -5px rgba(254, 118, 0, 0.12), 0 8px 12px -6px rgba(0, 32, 109, 0.05);
+  border-color: #BAE6FD;
+  box-shadow: 0 14px 30px -5px rgba(2, 184, 253, 0.15), 0 8px 12px -6px rgba(2, 67, 149, 0.08);
   transform: translateY(-2px);
 }
 
+.card-aqualife-dark,
 .card-sol-dark {
-  background: #001954;
-  border: 1px solid #13398D;
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+  background: #051C73;
+  border: 1px solid #1E4BA8;
+  box-shadow: 0 4px 20px -2px rgba(3, 20, 69, 0.5);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.card-aqualife-dark:hover,
 .card-sol-dark:hover {
-  border-color: #FE7600;
-  box-shadow: 0 12px 30px -5px rgba(254, 118, 0, 0.25);
+  border-color: #02B8FD;
+  box-shadow: 0 12px 30px -5px rgba(2, 184, 253, 0.25);
   transform: translateY(-2px);
 }
 
@@ -188,5 +216,5 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00206D;
+  background: #024395;
 }
