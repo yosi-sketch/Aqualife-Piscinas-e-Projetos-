@@ -3,62 +3,66 @@
 :root {
   color-scheme: light;
   
-  /* ÁGUA VIVA PISCINAS — Paleta Primária (Onda Aquática & Oceano - Extraída do Logotipo) */
-  --brand-navy-darkest: #041426;
-  --brand-navy-deep: #071e3d;
-  --brand-navy-card: #0c2b56;
-  --brand-navy-border: #163f73;
+  /* SOL E PISCINA — Paleta Primária (Deep Navy Azul Marinho Real - Extraída do Logotipo) */
+  --brand-navy-darkest: #001038;
+  --brand-navy-deep: #001954;
+  --brand-navy-primary: #00206D;
+  --brand-navy-card: #00267F;
+  --brand-navy-border: #13398D;
   
-  --brand-blue-deep: #004d7a;
-  --brand-blue-primary: #0077b6;
-  --brand-blue-hover: #005f94;
-  --brand-blue-vibrant: #0096c7;
-  --brand-cyan-wave: #00b4d8;
-  --brand-cyan-light: #38bdf8;
-  --brand-cyan-surface: #f0f9ff;
-  --brand-cyan-border: #bae6fd;
+  /* SOL E PISCINA — Paleta Secundária (Sol Radiante & Energia Solar - Extraída do Logotipo) */
+  --brand-orange-primary: #FE7600;
+  --brand-orange-hover: #E06800;
+  --brand-orange-vibrant: #FF8A1E;
+  --brand-orange-light: #FFECD9;
+  --brand-orange-surface: #FFF7ED;
+  --brand-orange-border: #FED7AA;
   
-  /* ÁGUA VIVA PISCINAS — Paleta Secundária (Sol & Energia Térmica - Extraída do Logotipo) */
-  --brand-orange-primary: #ea580c;
-  --brand-orange-hover: #c2410c;
-  --brand-orange-vibrant: #f97316;
-  --brand-amber-gold: #f59e0b;
-  --brand-amber-light: #fef3c7;
-  --brand-amber-surface: #fffbeb;
-  --brand-amber-border: #fde68a;
+  --brand-amber-gold: #FFAA29;
+  --brand-amber-surface: #FFFBEB;
+  
+  /* Tons Aquáticos Complementares (Ondas do Logo e Água Cristalina) */
+  --brand-blue-deep: #003399;
+  --brand-blue-primary: #0284C7;
+  --brand-blue-hover: #0369A1;
+  --brand-cyan-wave: #0EA5E9;
+  --brand-cyan-light: #38BDF8;
+  --brand-cyan-surface: #F0F7FF;
+  --brand-cyan-border: #BAE6FD;
 
   /* Neutros e Superfícies */
-  --brand-slate-dark: #0f172a;
-  --brand-slate-muted: #64748b;
-  --brand-canvas-white: #ffffff;
-  --brand-canvas-light: #f8fafc;
-  --brand-canvas-alt: #f1f5f9;
-  --brand-canvas-border: #e2e8f0;
+  --brand-slate-dark: #0A1128;
+  --brand-slate-muted: #64748B;
+  --brand-canvas-white: #FFFFFF;
+  --brand-canvas-light: #F8FAFC;
+  --brand-canvas-alt: #F1F5F9;
+  --brand-canvas-border: #E2E8F0;
   
   /* WhatsApp Oficial */
-  --brand-whatsapp: #16a34a;
-  --brand-whatsapp-hover: #15803d;
+  --brand-whatsapp: #16A34A;
+  --brand-whatsapp-hover: #15803D;
 }
 
 @theme inline {
   --font-heading: var(--font-heading), "Montserrat", system-ui, sans-serif;
   --font-sans: var(--font-body), "Plus Jakarta Sans", system-ui, sans-serif;
   
-  --color-brand-blue-primary: #0077b6;
-  --color-brand-blue-deep: #071e3d;
-  --color-brand-blue-darkest: #041426;
-  --color-brand-blue-vibrant: #0096c7;
-  --color-brand-cyan-wave: #00b4d8;
-  --color-brand-cyan-surface: #f0f9ff;
+  --color-brand-navy-primary: #00206D;
+  --color-brand-navy-deep: #001954;
+  --color-brand-navy-darkest: #001038;
+  --color-brand-navy-card: #00267F;
   
-  --color-brand-orange-primary: #ea580c;
-  --color-brand-orange-vibrant: #f97316;
-  --color-brand-amber-gold: #f59e0b;
-  --color-brand-amber-surface: #fffbeb;
+  --color-brand-orange-primary: #FE7600;
+  --color-brand-orange-hover: #E06800;
+  --color-brand-orange-vibrant: #FF8A1E;
+  --color-brand-orange-surface: #FFF7ED;
   
-  --color-brand-navy-card: #0c2b56;
-  --color-brand-canvas-light: #f8fafc;
-  --color-brand-canvas-surface: #ffffff;
+  --color-brand-blue-primary: #0284C7;
+  --color-brand-cyan-wave: #0EA5E9;
+  --color-brand-cyan-surface: #F0F7FF;
+  
+  --color-brand-canvas-light: #F8FAFC;
+  --color-brand-canvas-surface: #FFFFFF;
 }
 
 html {
@@ -67,16 +71,16 @@ html {
 }
 
 body {
-  background: #f8fafc;
-  color: #0f172a;
+  background: #F8FAFC;
+  color: #0A1128;
   font-family: var(--font-body), "Plus Jakarta Sans", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  background: #0096c7;
-  color: #ffffff;
+  background: #FE7600;
+  color: #FFFFFF;
 }
 
 .font-heading {
@@ -92,10 +96,10 @@ body {
   line-height: 1.4;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #0077b6;
+  color: #00206D;
 }
 
-.eyebrow-dark {
+.eyebrow-orange {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
@@ -104,51 +108,51 @@ body {
   line-height: 1.4;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #f97316;
+  color: #FE7600;
 }
 
 .eyebrow::before {
   width: 1.5rem;
   height: 2px;
   flex: none;
-  background: #0096c7;
+  background: #FE7600;
   content: "";
   border-radius: 999px;
 }
 
-.eyebrow-dark::before {
+.eyebrow-orange::before {
   width: 1.5rem;
   height: 2px;
   flex: none;
-  background: #f97316;
+  background: #FE7600;
   content: "";
   border-radius: 999px;
 }
 
 /* Card Styles */
-.card-aqua {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 1px 3px 0 rgba(0, 119, 182, 0.05), 0 1px 2px -1px rgba(0, 119, 182, 0.05);
+.card-sol {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 1px 3px 0 rgba(0, 32, 109, 0.04), 0 1px 2px -1px rgba(0, 32, 109, 0.04);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.card-aqua:hover {
-  border-color: #bae6fd;
-  box-shadow: 0 12px 30px -5px rgba(0, 150, 199, 0.15), 0 8px 12px -6px rgba(0, 150, 199, 0.08);
+.card-sol:hover {
+  border-color: #FED7AA;
+  box-shadow: 0 12px 30px -5px rgba(254, 118, 0, 0.12), 0 8px 12px -6px rgba(0, 32, 109, 0.05);
   transform: translateY(-2px);
 }
 
-.card-aqua-dark {
-  background: #071e3d;
-  border: 1px solid #163f73;
+.card-sol-dark {
+  background: #001954;
+  border: 1px solid #13398D;
   box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.card-aqua-dark:hover {
-  border-color: #0096c7;
-  box-shadow: 0 12px 30px -5px rgba(0, 180, 216, 0.3);
+.card-sol-dark:hover {
+  border-color: #FE7600;
+  box-shadow: 0 12px 30px -5px rgba(254, 118, 0, 0.25);
   transform: translateY(-2px);
 }
 
@@ -156,7 +160,7 @@ body {
 @keyframes subtlePulse {
   0%, 100% {
     transform: scale(1);
-    opacity: 0.92;
+    opacity: 0.94;
   }
   50% {
     transform: scale(1.04);
@@ -175,14 +179,14 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #F1F5F9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #94a3b8;
+  background: #94A3B8;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0077b6;
+  background: #00206D;
 }
